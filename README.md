@@ -24,5 +24,3 @@ Standard navigation platforms exclusively optimize for transit speed and geograp
 3. **Gamified Carbon Tracking:** Quantifies emissions saved per trip against vehicle baselines and credits users with eco-points stored in cloud persistence.
 
 ---
-
-## 🏗️ Architecture & Cloud Infrastructure
