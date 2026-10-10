@@ -213,14 +213,23 @@ VITE_AWS_DYNAMODB_TABLE=GreenPathUsers`}
                 <span>{copiedKey === 'deploy' ? 'Copied' : 'Copy Commands'}</span>
               </button>
             </div>
-            <p className="text-zinc-400 font-light text-xs leading-relaxed">
-              <strong>Option A (Easiest - 1 Click): AWS Amplify Hosting</strong><br />
-              Open the AWS Amplify console, select <em>Host web app</em>, link your repo or drag-and-drop the <code className="text-emerald-400">dist/</code> folder. Amplify builds and serves it with HTTPS globally on the AWS Free Tier.
-            </p>
-            <p className="text-zinc-400 font-light text-xs leading-relaxed">
-              <strong>Option B: Amazon S3 + CloudFront CDN</strong><br />
-              Create an S3 bucket configured for Static Website Hosting, sync the compiled <code className="text-emerald-400">dist/</code> files, and point an Amazon CloudFront distribution to it for blazing fast worldwide CDN caching.
-            </p>
+            <div className="space-y-3 pt-1">
+              <div className="bg-emerald-950/20 rounded-xl p-3 border border-emerald-500/20 text-xs text-zinc-300 space-y-2">
+                <p className="font-semibold text-emerald-400">⚡ AWS Amplify Settings Walkthrough (Post-GitHub Link):</p>
+                <ol className="list-decimal list-inside space-y-1.5 text-[11px] text-zinc-400">
+                  <li><strong className="text-zinc-200">App Name & Branch:</strong> Choose your app name and select your branch (usually <code className="text-emerald-400">main</code> or <code className="text-emerald-400">master</code>).</li>
+                  <li><strong className="text-zinc-200">Build Settings:</strong> An <code className="text-emerald-400">amplify.yml</code> is included at the repo root. Ensure <span className="text-emerald-300 font-mono">baseDirectory: dist</span> (not <code className="text-rose-400">build</code>), with build command <code className="text-emerald-400">npm run build</code>.</li>
+                  <li><strong className="text-zinc-200">Environment Variables:</strong> Under <em>Advanced Settings &gt; Environment variables</em>, add <code className="text-emerald-400">VITE_GOOGLE_MAPS_API_KEY</code> if using a custom key.</li>
+                  <li><strong className="text-zinc-200">SPA URL Rewrites:</strong> In Amplify console under <em>Hosting &gt; Rewrites and redirects</em>, ensure single-page rewrite points to <code className="text-emerald-400">/index.html</code> (status 200) to avoid 404 on refresh.</li>
+                  <li><strong className="text-zinc-200">Save & Deploy:</strong> Click <em>Save and deploy</em>. AWS will automatically run the build and publish your live HTTPS URL!</li>
+                </ol>
+              </div>
+
+              <p className="text-zinc-400 font-light text-xs leading-relaxed">
+                <strong>Alternative (Amazon S3 + CloudFront):</strong><br />
+                Create an S3 bucket with Static Website Hosting enabled, sync the compiled <code className="text-emerald-400">dist/</code> folder, and hook up a CloudFront distribution for worldwide CDN delivery.
+              </p>
+            </div>
           </div>
         </div>
 
