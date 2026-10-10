@@ -1,0 +1,112 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    letter-spacing: -0.01em;
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@layer utilities {
+  .font-metallic {
+    font-family: 'Space Grotesk', monospace, sans-serif;
+  }
+
+  /* Glassmorphism Dark */
+  .glass-panel-dark {
+    background: rgba(9, 13, 22, 0.88);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(255, 255, 255, 0.04);
+  }
+
+  .glass-card-dark {
+    background: rgba(16, 22, 34, 0.78);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Glassmorphism Light */
+  .glass-panel-light {
+    background: rgba(255, 255, 255, 0.94);
+    backdrop-filter: blur(24px);
+    -webkit-backdrop-filter: blur(24px);
+    border: 1px solid rgba(15, 23, 42, 0.1);
+    box-shadow: 0 16px 40px -10px rgba(0, 0, 0, 0.12), 0 0 1px 1px rgba(0, 0, 0, 0.04);
+  }
+
+  .glass-card-light {
+    background: rgba(248, 250, 252, 0.92);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .metallic-text-dark {
+    background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #94a3b8 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .metallic-text-light {
+    background: linear-gradient(135deg, #090d16 0%, #1e293b 50%, #475569 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .metallic-accent {
+    background: linear-gradient(135deg, #34d399 0%, #10b981 50%, #059669 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: rgba(148, 163, 184, 0.25);
+    border-radius: 9999px;
+  }
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: rgba(52, 211, 153, 0.5);
+  }
+}
+
+/* ========================================================================= */
+/* SUPPRESS GOOGLE MAPS DEFAULT CONTROLS (Fullscreen, Map/Satellite, Pegman)  */
+/* ========================================================================= */
+.gm-fullscreen-control,
+.gm-style-mtc,
+.gm-svpc,
+.gm-bundled-control,
+.gmnoprint:has(.gm-fullscreen-control),
+.gmnoprint:has(button[title*="fullscreen" i]),
+.gmnoprint:has(button[aria-label*="fullscreen" i]),
+button[title*="fullscreen" i],
+button[aria-label*="fullscreen" i],
+button[title*="Toggle fullscreen" i],
+button[aria-label*="Toggle fullscreen" i],
+button[title*="Map" i],
+button[title*="Satellite" i],
+.gm-style button[title*="fullscreen" i] {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Retain subtle Google attribution at the very bottom right */
+.gm-style-cc {
+  opacity: 0.55;
+  transition: opacity 0.2s;
+}
+.gm-style-cc:hover {
+  opacity: 1;
+}
